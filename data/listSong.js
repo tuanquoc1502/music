@@ -48,6 +48,13 @@
         path: './assets/music/listSong1/song7.mp3',
         image: './assets/img/listSong1/image_song7.webp'
     },
+    {
+        name: 'Độ Tộc 2',
+        singer: 'MixiGaming',
+        time: '03:30',
+        path: './assets/music/listSong1/song8.mp3',
+        image: './assets/img/listSong1/image_song8.webp'
+    },
   
 ]
 
