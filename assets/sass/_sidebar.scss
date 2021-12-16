@@ -1,0 +1,231 @@
+.app__sidebar {
+  width: 240px;
+  background: #411465;
+  position: relative;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar__logo {
+  padding: 16px 0;
+  &-img {
+    height: 3.4rem;
+    margin-left: 3rem;
+  }
+}
+
+.sidebar__nav {
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .sidebar__nav-item {
+      margin: 0;
+      height: 3.8rem;
+      display: flex;
+      align-items: center;
+
+      .sidebar__item-link {
+        text-decoration: none;
+        color: $white-gray;
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+
+        & i {
+          font-size: 1.93rem;
+          margin-right: 12px;
+          line-height: 3rem;
+        }
+
+        & span {
+          display: inline-block;
+          font-size: 1.3rem;
+          line-height: 3rem;
+          font-weight: 600;
+        }
+        .nav__labl {
+          font-size: 1rem;
+          font-weight: 600;
+          border-radius: 3px;
+          background: red;
+          padding: 0 6px;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .sidebar__nav-item:hover {
+      .sidebar__item-link {
+        color: $white-color;
+      }
+    }
+
+    .sidebar__nav-item.active {
+      background-color: #542c75;
+      .sidebar__item-link {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+.sidebar__nav::after {
+  content: "";
+  display: block;
+  width: 187px;
+  height: 1px;
+  bottom: 0;
+  margin: 15px auto;
+  background: #542c75;
+}
+
+.sidebar__subnav {
+  max-height: 520px;
+  overflow: hidden;
+
+  &:hover {
+    overflow: hidden overlay;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4.5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(133, 128, 129);
+    border-radius: 5px;
+  }
+}
+
+.sidebar__banner {
+  background-image: linear-gradient(117deg, #5a4be7, #c86dd7 102%);
+  text-align: center;
+  border-radius: 8px;
+  width: 200px;
+  margin: 10px auto;
+  padding: 23px 12px;
+
+  &-description {
+    color: $white-color;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &-link {
+    text-decoration: none;
+    background-color: #ffdb00;
+    color: $black-color;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 0;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 150px;
+    display: block;
+  }
+  &-link:hover {
+    background-color: #e4c400;
+  }
+}
+
+.sidebar__subnav-libary {
+  .subnav__title {
+    color: $white-gray;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 30px;
+
+    & span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    & i {
+      cursor: pointer;
+      font-size: 15px;
+    }
+  }
+}
+
+.subnav__menu {
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .subnav__menu-item {
+      margin: 0;
+      height: 3.8rem;
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: $white-gray;
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        svg {
+          margin-right: 12px;
+        }
+      }
+      a:hover {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+.sidebar__my-playlist {
+  margin: 0;
+  .playlist-personal {
+    list-style: none;
+    padding: 0;
+    margin-left: 30px;
+    li {
+      line-height: 30px;
+      a {
+        text-decoration: none;
+        color: $white-gray;
+        font-size: 12px;
+      }
+      a:hover {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+.sidebar__add-playlist {
+  padding: 0 30px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #542c75;
+  position: fixed;
+  bottom: 0;
+  background: #411465;
+  width: 240px;
+  margin-bottom: 85px;
+
+  a {
+    color: $white-color;
+    text-decoration: none;
+    i {
+      font-size: 15px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  a:hover {
+    color: $white-gray;
+  }
+}
