@@ -10,24 +10,20 @@ const timeStartSong = $('.track-time')
 const timeEndSong = $('.durationtime')
 const audio = $('#audio');
 const progress = $('.progress-track')
+const volumeRange = $('.volume__range')
 const playBtn = $('.controls__play-pause')
 const nextBtn = $('.icon-next')
 const prevBtn = $('.icon-prev')
 const randomBtn = $('.icon-random')
 const replaceSong = $('.icon-replace')
-
-
-// const thumNode = $$('.thumb-note')
-// thumNode[0].classList.add('active')
-// thumNode[1].classList.add('active')
-// thumNode[2].classList.add('active')
-// thumNode[3].classList.add('active')
+const volumeBtn = $('.player-controls__volume')
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
     isReplace: false,
+    isVolume: false,
 
     render() {
         const htmls = listSong1.map((song, index) => (
@@ -190,6 +186,31 @@ const app = {
             }
         }
 
+
+        // Hanlde Volume
+        volumeRange.onchange = e => {
+            const totalVolume = e.target.value / 100
+            volumeRange.setAttribute('value', totalVolume * 100 )
+            audio.volume = totalVolume
+            volumeBtn.innerHTML = audio.volume === 0 ? 
+            `<i class="bi bi-volume-mute"></i>` 
+            : `<i class="bi bi-volume-up"></i>`
+            
+        }
+
+        volumeBtn.onclick = () => {
+            _this.isVolume = !_this.isVolume
+            if (_this.isVolume) {
+                volumeBtn.innerHTML = `<i class="bi bi-volume-mute"></i>`
+                audio.volume = 0
+            } else {
+                volumeBtn.innerHTML = `<i class="bi bi-volume-up"></i>`
+                audio.volume = volumeRange.getAttribute('value') / 100
+            }
+        }
+
+        
+
     },
 
     defineProperties() {
@@ -206,6 +227,7 @@ const app = {
                                     <span>${this.currentSong.singer}</span>`
         timeEndSong.innerHTML = `${this.currentSong.time}`
         audio.src = this.currentSong.path
+        
     },
 
     playRandomSong() {
@@ -316,15 +338,81 @@ const items = $$('.sidebar__nav-item')
 const itemsActive = $('.sidebar__nav-item.active')
 
 
+const toastDefault = () => {
+    toast({
+        title: 'Thông báo',
+        message: 'Chức năng hiện đang được cập nhật, bạn vui lòng thông cảm!',
+        type: 'success',
+        duration: 2.1
+    })
+}
+
 items.forEach(item => {
     item.onclick = () => {
         if (item !== itemsActive) {
-            toast({
-                title: 'Thông báo',
-                message: 'Chức năng hiện đang được cập nhật, bạn vui lòng thông cảm!',
-                type: 'success',
-                duration: 2.1
-            })
+            toastDefault()
         }
     }
 })
+
+$$('.header__nav-item').forEach(item => {
+    item.onclick = () => {
+        toastDefault()
+    }
+})
+
+const acctives = $('.content__navbar-item.active')
+
+$$('.content__navbar-item').forEach(item => {
+    item.onclick = () => {
+        if( item !== acctives ) {
+            toastDefault()
+        }
+    }
+})
+
+$('.download-song').onclick = () => {
+    toastDefault()
+}
+
+$('.play-all').onclick = () => {
+    toastDefault()
+}
+
+$('.buy-vip-btn').onclick = () => {
+    toastDefault()
+}
+
+$('.import-code-btn').onclick = () => {
+    toastDefault()
+}
+
+//Slide show 
+
+
+
+let index = 2;
+function slideShow() {
+
+    const allSongImg = $$('.song__animate-item') // 6 img
+    const slideFirst = $('.song__animate-item.first')
+    const slideSecond = $('.song__animate-item.second')
+
+    const slideThird = allSongImg[index]
+    const slideFourth = allSongImg[index === allSongImg.length - 1 ? '0' : index + 1]
+
+    slideFourth.classList.replace('fourth','third')
+    slideThird.classList.replace('third','second')
+    slideSecond.classList.replace('second','first')
+    slideFirst.classList.replace('first', 'fourth')
+
+    index++
+    if (index >= allSongImg.length) {
+        index = 0
+    }
+
+    setTimeout(slideShow, 3000)
+
+}
+
+slideShow()

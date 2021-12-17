@@ -1,10 +1,10 @@
  const listSong = [
     {
-        name: 'Big City Bang',
-        singer: 'Phan Huy Cường',
-        time: '04:27',
+        name: 'Windy Hill',
+        singer: 'V.A',
+        time: '05:09',
         path: './assets/music/listSong1/song1.mp3',
-        image: './assets/img/listSong1/image_song1.jpg'
+        image: './assets/img/listSong1/image_song1.webp'
     },
     {
         name: 'G.Ducky - Eyes',
@@ -42,11 +42,11 @@
         image: './assets/img/listSong1/image_song6.webp'
     },
     {
-        name: 'Windy Hill',
-        singer: 'V.A',
-        time: '05:09',
+        name: 'Big City Bang',
+        singer: 'Phan Huy Cường',
+        time: '04:27',
         path: './assets/music/listSong1/song7.mp3',
-        image: './assets/img/listSong1/image_song7.webp'
+        image: './assets/img/listSong1/image_song7.jpg'
     },
     {
         name: 'Độ Tộc 2',

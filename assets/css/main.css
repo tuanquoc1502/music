@@ -676,19 +676,15 @@ body {
   will-change: transform, opacity;
 }
 .player-controls-left .media__left .wapper__thumb-node.playing .note-1 {
-  animation: circularMotion1 4.8s linear infinite;
   -webkit-animation: circularMotion1 4.8s linear infinite;
 }
 .player-controls-left .media__left .wapper__thumb-node.playing .note-2 {
-  animation: circularMotion2 4.8s 1.2s linear infinite;
   -webkit-animation: circularMotion2 4.8s 1.2s linear infinite;
 }
 .player-controls-left .media__left .wapper__thumb-node.playing .note-3 {
-  animation: circularMotion3 4.8s 2.4s linear infinite;
   -webkit-animation: circularMotion3 4.8s 2.4s linear infinite;
 }
 .player-controls-left .media__left .wapper__thumb-node.playing .note-4 {
-  animation: circularMotion4 4.8s 3.6s linear infinite;
   -webkit-animation: circularMotion4 4.8s 3.6s linear infinite;
 }
 @keyframes circularMotion1 {
@@ -784,17 +780,37 @@ body {
   justify-content: center;
   margin-bottom: 10px;
 }
-.player-controls__player-bar .player__controls-btn .icon-random.active {
+.player-controls__player-bar .player__controls-btn .icon-random.active, .player-controls__player-bar .player__controls-btn .active.icon-replace, .player-controls__player-bar .player__controls-btn .active.icon-next, .player-controls__player-bar .player__controls-btn .active.icon-prev {
   color: #fe63da;
 }
 .player-controls__player-bar .player__controls-btn .icon-replace.active {
   color: #fe63da;
 }
-.player-controls__player-bar .player__controls-btn i {
+.player-controls__player-bar .player__controls-btn .icon-random, .player-controls__player-bar .player__controls-btn .icon-replace, .player-controls__player-bar .player__controls-btn .icon-next, .player-controls__player-bar .player__controls-btn .icon-prev {
   color: white;
-  font-size: 18px;
-  margin: 0 18px;
+  font-size: 16px;
+  margin: 0 16px;
   cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-controls__player-bar .player__controls-btn .icon-random:hover, .player-controls__player-bar .player__controls-btn .icon-replace:hover, .player-controls__player-bar .player__controls-btn .icon-next:hover, .player-controls__player-bar .player__controls-btn .icon-prev:hover {
+  background: #51306a;
+  transition: 0.1s linear;
+}
+.player-controls__player-bar .player__controls-btn .icon-prev {
+  font-size: 22px;
+}
+.player-controls__player-bar .player__controls-btn .icon-next {
+  font-size: 22px;
+}
+.player-controls__player-bar .player__controls-btn .icon-replace {
+  font-size: 18px;
+  line-height: 30px;
 }
 .player-controls__player-bar .player__controls-btn .controls__play-pause {
   border: 1px solid white;
@@ -804,18 +820,24 @@ body {
   justify-content: center;
   width: 38px;
   height: 36px;
-  margin: 0 25px;
+  margin: 0 15px;
 }
 .player-controls__player-bar .player__controls-btn .icon-play {
   font-size: 27px;
   position: relative;
   left: 1px;
+  color: white;
+  font-size: 27px;
+  margin: 0 18px;
+  cursor: pointer;
 }
 .player-controls__player-bar .player__controls-btn .icon-play:hover {
   color: #fe63da;
 }
 .player-controls__player-bar .player__controls-btn .icon-pause {
   display: none;
+  color: white;
+  cursor: pointer;
 }
 .player-controls__player-bar .player__controls-btn .controls__play-pause.active .icon-play {
   display: none;
@@ -855,21 +877,48 @@ body {
   width: 25%;
 }
 .player-controls-right .player-controls__video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 15.5px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+.player-controls-right .player-controls__video:hover {
+  cursor: no-drop;
 }
 .player-controls-right .player-controls__mic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   cursor: pointer;
-  font-size: 15px;
-  padding: 0 18px;
+  width: 30px;
+  height: 30px;
+  font-size: 15.5px;
+  margin: 0 8px;
+  opacity: 0.5;
+}
+.player-controls-right .player-controls__mic:hover {
+  cursor: no-drop;
 }
 .player-controls-right .player-controls__volume {
   color: white;
   cursor: pointer;
   font-size: 20px;
-  padding-right: 4px;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-controls-right .player-controls__volume:hover {
+  background: #4b206e;
+  border-radius: 50%;
 }
 .player-controls-right .player-controls__volume-progress {
   display: flex;
@@ -1140,17 +1189,55 @@ body {
 
 .container__song {
   display: flex;
+  align-items: center;
   height: 244px;
 }
 .container__song .song__animate-list {
   padding: 0;
   list-style: none;
-  width: 290px;
-  padding-right: 20px;
-  margin: 0;
+  width: 230px;
+  height: 100%;
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+.container__song .song__animate-list .song__animate-item {
+  width: 230px;
+  height: 244px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.9s;
+  will-change: transform, opacity;
+  transform: perspective(1px) translateZ(0);
 }
 .container__song .song__animate-list .song__animate-item img {
   border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+.container__song .song__animate-list .song__animate-item.first {
+  opacity: 1;
+  transform: translate3d(0, 0, 60px);
+}
+.container__song .song__animate-list .song__animate-item.second {
+  opacity: 0.8;
+  transform: translate3d(-20px, 0, 40px);
+  width: 200px;
+  height: 214px;
+}
+.container__song .song__animate-list .song__animate-item.third {
+  opacity: 0.3;
+  transform: translate3d(-40px, 0, 20px);
+  width: 170px;
+  height: 184px;
+}
+.container__song .song__animate-list .song__animate-item.fourth {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 20px);
+  width: 170px;
+  height: 184px;
 }
 .container__song .container__playlist {
   height: 100%;
@@ -1222,7 +1309,7 @@ body {
 }
 .container__song .container__playlist .playlist .playlist__song-item .song-item__info .song__icon-tone img {
   position: relative;
-  top: 8px;
+  top: 10.5px;
   left: 9.5px;
   width: 20px;
   height: 18px;
@@ -1278,6 +1365,9 @@ body {
 }
 .container__song .container__playlist .playlist .playlist__song-item:hover .song__icon-play {
   display: block;
+}
+.container__song .container__playlist .playlist .playlist__song-item.active:hover .song__icon-play {
+  display: none;
 }
 .container__song .container__playlist .playlist .playlist__song-item.active, .container__song .container__playlist .playlist .active.playlist__song-item, .container__song .container__playlist .playlist .active.playlist__song-item {
   background: #ffffff1a;

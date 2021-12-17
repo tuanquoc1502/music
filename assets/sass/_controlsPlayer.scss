@@ -43,22 +43,18 @@
             will-change: transform, opacity;
           }
           .note-1 {
-            animation: circularMotion1 4.8s linear infinite;
             -webkit-animation: circularMotion1 4.8s linear infinite;
           }
   
           .note-2 {
-            animation: circularMotion2 4.8s 1.2s linear infinite;
             -webkit-animation: circularMotion2 4.8s 1.2s linear infinite;
           }
   
           .note-3 {
-            animation: circularMotion3 4.8s 2.4s linear infinite;
             -webkit-animation: circularMotion3 4.8s 2.4s linear infinite;
           }
   
           .note-4 {
-            animation: circularMotion4 4.8s 3.6s linear infinite;
             -webkit-animation: circularMotion4 4.8s 3.6s linear infinite;
           }
   
@@ -169,6 +165,7 @@
 
   &-controls__player-bar {
     width: 50%;
+
     .player__controls-btn {
       display: flex;
       align-items: center;
@@ -183,11 +180,38 @@
         color: #fe63da;
       }
 
-      i {
+      .icon-random {
         color: $white-color;
-        font-size: 18px;
-        margin: 0 18px;
+        font-size: 16px;
+        margin: 0 16px;
         cursor: pointer;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          background: #51306a;
+          transition: 0.1s linear;
+        }
+      }
+
+      .icon-prev {
+        @extend .icon-random;
+        font-size: 22px;
+      }
+      
+      .icon-next {
+        @extend .icon-random;
+        font-size: 22px;
+        
+      }
+
+      .icon-replace {
+        @extend .icon-random;
+        font-size: 18px;
+        line-height: 30px;
       }
 
       .controls__play-pause {
@@ -198,13 +222,17 @@
         justify-content: center;
         width: 38px;
         height: 36px;
-        margin: 0 25px;
+        margin: 0 15px;
       }
 
       .icon-play {
         font-size: 27px;
         position: relative;
         left: 1px;
+        color: $white-color;
+        font-size: 27px;
+        margin: 0 18px;
+        cursor: pointer;
         &:hover {
           color: #fe63da;
         }
@@ -212,6 +240,8 @@
 
       .icon-pause {
         display: none;
+        color: $white-color;
+        cursor: pointer;
       }
 
       .controls__play-pause.active {
@@ -262,23 +292,54 @@
     width: 25%;
 
     .player-controls__video {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: $white-color;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 15.5px;
+      width: 30px;
+      height: 30px;
+      opacity: 0.5;
+
+      &:hover {
+        cursor: no-drop;
+      }
     }
 
     .player-controls__mic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: $white-color;
       cursor: pointer;
-      font-size: 15px;
-      padding: 0 18px;
+      width: 30px;
+      height: 30px;
+      font-size: 15.5px;
+      margin: 0 8px;
+      opacity: 0.5;
+
+      &:hover {
+        cursor: no-drop;
+      }
     }
 
     .player-controls__volume {
       color: $white-color;
       cursor: pointer;
       font-size: 20px;
-      padding-right: 4px;
+      width: 30px;
+      height: 30px;
+      margin-right: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: #4b206e;
+
+        border-radius: 50%;
+      }
     }
 
     .player-controls__volume-progress {
