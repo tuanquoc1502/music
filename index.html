@@ -216,6 +216,7 @@
 
         <!-- Container -->
         <div class=app__container>
+
             <div class="app__container-bg">
 
             </div>
@@ -302,12 +303,10 @@
                     </ul>
                 </div> 
 
-                <div class="content__container">
+                <div class="content__container tab-overview active">
 
                     <div class="container__tab">
-
                         <div class="music-song-section">
-
                             <div class="header">
                                 <h3 class="left">Bài Hát <i class="bi bi-chevron-right"></i></h3>
                                 <div class="right">
@@ -320,9 +319,8 @@
                                         <span>PHÁT TẤT CẢ</span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="container__song">
+                            </div>       
+                            <div class="container__overview">
 
                                 <div class="song__animate-list">
                                     <div class="song__animate-item first">
@@ -351,13 +349,89 @@
                                 </div>        
 
                             </div>
-
                         </div>
-
                    </div>
+                   
 
                 </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Bài Hát</h3>
+                    </div>
+                    <div class="container__song">
+                        <div class="container__song-index">
+                            <h4 class="pillar-song">BÀI HÁT</h4>
+                            <h4 class="pillar-time">THỜI GIAN</h4>
+                        </div>
+                        <ul class="container__song-list">
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Bài Hát</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Playlist</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Album</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">MV</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Nghệ Sĩ</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
+                <div class="content__container tab-song">
+                    <div class="header">
+                        <h3 class="left">Danh Sách Tải Lên</h3>
+                    </div>
+                    <div class="container__not-update">
+                        <div class="img-notification"></div>
+                        <span class="content-notification">Đang được cập nhật</span>
+                    </div>
+                </div>
+
             </div>
+
         </div>
 
         <!-- Toast -->
@@ -390,7 +464,7 @@
                         <span>Sơn Tùng M-TP</span>
                     </div>
                     <div class="media__right">
-                        <i class="bi-heart-fill"></i>
+                        <i class="bi-heart-fill media__right-heart active"></i>
                         <i class="bi-three-dots"></i>
                     </div>
                 </div>
@@ -409,7 +483,7 @@
                 </div>
                 <div class="progress-block">
                     <div class="track-time"></div>
-                    <input class="progress-track" type="range" value="0" step="1" min="0" max="100"></input>
+                    <input class="progress-track" type="range" value="0" step="1" min="0" max="100">
                     <div class="durationtime"></div>
                 </div>
             </div>
@@ -422,7 +496,6 @@
                     <i class="bi bi-mic"></i>
                 </div>
                 <div class="player-controls__volume">
-                    <!-- <i class="bi bi-volume-mute"></i> -->
                     <i class="bi bi-volume-up"></i>
                 </div>
                 <div class="player-controls__volume-progress">

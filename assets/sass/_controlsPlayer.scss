@@ -156,8 +156,15 @@
         color: $white-gray;
         cursor: pointer;
         i {
-          padding: 0 8px;
           font-size: 13px;
+        }
+
+        .media__right-heart {
+          margin-right: 12px;
+        }
+
+        .media__right-heart.active {
+          color: #ed2b91;
         }
       }
     }

@@ -7,11 +7,11 @@
         image: './assets/img/listSong1/image_song1.webp'
     },
     {
-        name: 'G.Ducky - Eyes',
-        singer: 'RAP VIỆT [MV Lyrics]',
-        time: '02:31',
+        name: 'Không Bằng',
+        singer: 'RIN Music Remix',
+        time: '04:00',
         path: './assets/music/listSong1/song2.mp3',
-        image: './assets/img/listSong1/image_song2.jpg'
+        image: './assets/img/listSong1/image_song2.webp'
     },
     {
         name: 'Đường Tôi Chở Em Về',
@@ -42,11 +42,11 @@
         image: './assets/img/listSong1/image_song6.webp'
     },
     {
-        name: 'Big City Bang',
-        singer: 'Phan Huy Cường',
-        time: '04:27',
+        name: 'Yêu Là Cưới',
+        singer: 'Phát Hồ X2X',
+        time: '03:07',
         path: './assets/music/listSong1/song7.mp3',
-        image: './assets/img/listSong1/image_song7.jpg'
+        image: './assets/img/listSong1/image_song7.webp'
     },
     {
         name: 'Độ Tộc 2',
@@ -54,6 +54,20 @@
         time: '03:30',
         path: './assets/music/listSong1/song8.mp3',
         image: './assets/img/listSong1/image_song8.webp'
+    },
+    {
+        name: 'G.Ducky - Eyes',
+        singer: 'RAP VIỆT [MV Lyrics]',
+        time: '02:31',
+        path: './assets/music/listSong1/song9.mp3',
+        image: './assets/img/listSong1/image_song9.jpg'
+    },
+    {
+        name: 'Tự Em Đa Tình',
+        singer: 'Quinn (Remix)',
+        time: '03:32',
+        path: './assets/music/listSong1/song10.mp3',
+        image: './assets/img/listSong1/image_song10.webp'
     },
   
 ]
