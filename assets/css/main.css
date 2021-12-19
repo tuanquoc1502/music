@@ -1008,6 +1008,7 @@ body {
 .app__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 70px;
   padding: 0 30px;
   position: fixed;
@@ -1568,6 +1569,11 @@ body {
 .container__song-list .container__song-item .song-item__info .info-title span {
   font-size: 11.5px;
   color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
 }
 .container__song-list .container__song-item .song-item__time {
   font-size: 12px;
@@ -1682,6 +1688,10 @@ body {
     display: none;
   }
 
+  .app__container {
+    padding: 0 10px;
+  }
+
   .app__header {
     padding: 0 20px;
     width: 100%;
@@ -1709,6 +1719,9 @@ body {
   .content .content__navbar .content__navbar-list .content__navbar-item.hide-on-mobile {
     display: none;
   }
+  .content .content__container {
+    padding: 0 12px;
+  }
   .content .content__container .header .download-song.hide-on-mobile, .content .content__container .header .right .hide-on-mobile.play-all {
     display: none;
   }
@@ -1718,16 +1731,37 @@ body {
   .content .content__container .container__playlist .playlist .playlist__song-item .song-item__time {
     display: none;
   }
+  .content .content__container .container__song .container__song-index {
+    display: none;
+  }
+  .content .content__container .container__song .container__song-list .container__song-item .song-item__time {
+    display: none;
+  }
 
+  .player {
+    justify-content: space-between;
+  }
   .player .player-controls-left .media .media__left .thumb-img img {
     width: 40px;
     height: 40px;
+  }
+  .player .player-controls-left .media .media__left.active {
+    margin-left: 10px;
   }
   .player .player-controls-left .media .media__right {
     display: none;
   }
   .player .player-controls-right {
     display: none;
+  }
+  .player .player-controls__player-bar .player__controls-btn {
+    margin-bottom: 0;
+  }
+  .player .player-controls__player-bar .progress-block {
+    display: none;
+  }
+  .player .player-controls__player-bar .controls__play-pause {
+    border: none;
   }
 }
 @media (min-width: 46.25em) and (max-width: 63.9375em) {

@@ -4,6 +4,10 @@
     display: none;
   }
 
+  .app__container {
+    padding: 0 10px;
+  }
+
   .app__header {
     padding: 0 20px;
     width: 100%;
@@ -41,6 +45,8 @@
       }
     }
     .content__container {
+      padding: 0 12px;
+      //tab1
       .header {
         .download-song.hide-on-mobile {
           display: none;
@@ -60,11 +66,24 @@
           }
         }
       }
+      //tab2
+      .container__song {
+        .container__song-index {
+          display: none;
+        }
+        .container__song-list {
+          .container__song-item {
+            .song-item__time {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 
   .player {
-    // flex-direction: column;
+    justify-content: space-between;
     .player-controls-left {
       .media {
         .media__left {
@@ -75,6 +94,9 @@
             }
           }
         }
+        .media__left.active {
+          margin-left: 10px;
+        }
         .media__right {
           display: none;
         }
@@ -82,6 +104,17 @@
     }
     .player-controls-right {
       display: none;
+    }
+    .player-controls__player-bar {
+      .player__controls-btn {
+        margin-bottom: 0;
+      }
+      .progress-block {
+        display: none;
+      }
+      .controls__play-pause {
+        border: none;
+      }
     }
   }
 }
@@ -266,3 +299,4 @@
 }
 
 //Tablet and Mobile
+
