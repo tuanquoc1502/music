@@ -1,0 +1,268 @@
+// Mobile
+@media only screen and (max-width: 46.1875em) {
+  .app__sidebar {
+    display: none;
+  }
+
+  .app__header {
+    padding: 0 20px;
+    width: 100%;
+    .header__with-search {
+      .header__btn-prev {
+        display: none;
+      }
+      .header__btn-next {
+        display: none;
+      }
+    }
+    .header__nav {
+      .header__nav-list {
+        padding-left: 20px;
+        .header__nav-item.hide-on-mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .app__header-container {
+    .header-actions {
+      display: none;
+    }
+  }
+
+  .content {
+    .content__navbar {
+      margin-top: 45px;
+      .content__navbar-list {
+        .content__navbar-item.hide-on-mobile {
+          display: none;
+        }
+      }
+    }
+    .content__container {
+      .header {
+        .download-song.hide-on-mobile {
+          display: none;
+        }
+      }
+
+      .song__animate-list {
+        display: none;
+      }
+
+      .container__playlist {
+        .playlist {
+          .playlist__song-item {
+            .song-item__time {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .player {
+    // flex-direction: column;
+    .player-controls-left {
+      .media {
+        .media__left {
+          .thumb-img {
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+        .media__right {
+          display: none;
+        }
+      }
+    }
+    .player-controls-right {
+      display: none;
+    }
+  }
+}
+
+// Tablet
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+  .app__sidebar {
+    width: 70px;
+    text-align: center;
+    background: #572f90;
+
+    .sidebar__logo {
+      &-img {
+        display: none;
+      }
+      &-tablet {
+        display: block;
+      }
+    }
+
+    .sidebar__nav {
+      .sidebar__nav-list {
+        .sidebar__nav-item {
+          margin-bottom: 10px;
+          padding: 20px 0;
+          justify-content: center;
+          .sidebar__item-link {
+            margin: 0;
+            span {
+              display: none;
+            }
+            i {
+              margin: 0;
+              font-size: 23px;
+            }
+            .nav__labl {
+              display: none;
+            }
+          }
+        }
+        .sidebar__nav-item.active {
+          background: #68449b;
+        }
+      }
+    }
+    .sidebar__nav::after {
+      width: 100%;
+    }
+
+    .sidebar__subnav {
+      .sidebar__nav-list {
+        .sidebar__nav-item {
+          margin-bottom: 10px;
+          justify-content: center;
+          .sidebar__item-link {
+            margin: 0;
+            i {
+              margin: 0;
+              font-size: 23px;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar__banner {
+      display: none;
+    }
+
+    .sidebar__subnav-libary {
+      margin-top: 20px;
+      .subnav__title {
+        display: none;
+      }
+      .subnav__menu {
+        .subnav__menu-list {
+          .subnav__menu-item {
+            justify-content: center;
+            a {
+              margin: 0;
+              svg {
+                margin: 0;
+              }
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar__my-playlist {
+      display: none;
+    }
+
+    .sidebar__add-playlist {
+      background: #572f90;
+      width: 70px;
+      justify-content: center;
+      .create-song {
+        display: none;
+      }
+      .btn-expanded {
+        display: flex;
+      }
+    }
+  }
+
+  .player {
+    .media__right {
+      display: none;
+    }
+    .player-controls__video {
+      display: none;
+    }
+    .player-controls__player-bar {
+      .player__controls-btn {
+        i {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .player-controls-right {
+      .player-controls__mic {
+        display: none;
+      }
+      .player-controls__list-icon {
+        margin-left: 20px;
+        padding: 4px 3.5px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .app__container {
+    padding: 0 10px;
+    .app__header {
+      width: calc(100% - 70px);
+    }
+    .app__header-container {
+      .header-actions {
+        .buy-vip-btn {
+          margin-right: 10px;
+        }
+        .import-code-btn {
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      .content__navbar {
+        .content__navbar-list {
+          margin: 0;
+          .content__navbar-item {
+            min-width: 100px;
+          }
+          .content__navbar-item.hide-on-tablet {
+            display: none;
+          }
+        }
+      }
+
+      .tab-overview {
+        padding-left: 35px;
+        padding-right: 0;
+        .container__playlist {
+          .song-item__time {
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Tablet and Mobile

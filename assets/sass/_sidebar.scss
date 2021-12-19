@@ -13,6 +13,14 @@
     height: 3.4rem;
     margin-left: 3rem;
   }
+  &-tablet {
+    display: none;
+    height: 3.4rem;
+    margin-left: 3rem;
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+  }
 }
 
 .sidebar__nav {
@@ -209,12 +217,15 @@
   bottom: 0;
   background: #411465;
   width: 240px;
-  margin-bottom: 85px;
+  margin-bottom: 88px;
 
-  a {
+  .create-song {
     color: $white-color;
     text-decoration: none;
-    i {
+    &:hover {
+      color: $white-gray;
+    }
+    .ic-create-song {
       font-size: 15px;
       font-weight: 700;
       margin-right: 10px;
@@ -225,7 +236,23 @@
       font-weight: 600;
     }
   }
-  a:hover {
-    color: $white-gray;
+
+  .btn-expanded {
+    color: $white-color;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #68449b;
+    display: none;
+    &:hover {
+      opacity: 0.8;
+    }
+    i {
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
   }
 }

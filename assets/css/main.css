@@ -437,6 +437,14 @@ body {
   height: 3.4rem;
   margin-left: 3rem;
 }
+.sidebar__logo-tablet {
+  display: none;
+  height: 3.4rem;
+  margin-left: 3rem;
+  width: 40px;
+  height: 40px;
+  margin: 0 15px;
+}
 
 .sidebar__nav-list {
   margin: 0;
@@ -612,23 +620,41 @@ body {
   bottom: 0;
   background: #411465;
   width: 240px;
-  margin-bottom: 85px;
+  margin-bottom: 88px;
 }
-.sidebar__add-playlist a {
+.sidebar__add-playlist .create-song {
   color: white;
   text-decoration: none;
 }
-.sidebar__add-playlist a i {
+.sidebar__add-playlist .create-song:hover {
+  color: #dadada;
+}
+.sidebar__add-playlist .create-song .ic-create-song {
   font-size: 15px;
   font-weight: 700;
   margin-right: 10px;
 }
-.sidebar__add-playlist a span {
+.sidebar__add-playlist .create-song span {
   font-size: 14px;
   font-weight: 600;
 }
-.sidebar__add-playlist a:hover {
-  color: #dadada;
+.sidebar__add-playlist .btn-expanded {
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #68449b;
+  display: none;
+}
+.sidebar__add-playlist .btn-expanded:hover {
+  opacity: 0.8;
+}
+.sidebar__add-playlist .btn-expanded i {
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .player {
@@ -753,15 +779,24 @@ body {
 .player-controls-left .media__content {
   padding: 0 20px 0 10px;
   font-size: 12px;
+  max-width: 200px;
 }
 .player-controls-left .media__content h4 {
   color: #dadada;
   margin: 0;
   line-height: 25px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .player-controls-left .media__content span {
   color: #dadada;
   opacity: 0.7;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 .player-controls-left .media__right {
   color: #dadada;
@@ -946,7 +981,8 @@ body {
 
 .app__container {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: calc(100vh - 88px);
   padding: 0 45px;
 }
@@ -1121,7 +1157,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 700px;
   margin: 0 auto;
   margin-top: 60px;
 }
@@ -1371,11 +1406,24 @@ body {
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 .container__overview .container__playlist .playlist .playlist__song-item .song-item__info .info-title span {
   color: white;
   opacity: 0.55;
   font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
 .container__overview .container__playlist .playlist .playlist__song-item .song-item__time, .container__overview .container__playlist .playlist .playlist__song-item.active .song-item__time {
   width: 30%;
@@ -1627,6 +1675,192 @@ body {
 @keyframes fadeOut {
   to {
     opacity: 0;
+  }
+}
+@media only screen and (max-width: 46.1875em) {
+  .app__sidebar {
+    display: none;
+  }
+
+  .app__header {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .app__header .header__with-search .header__btn-prev {
+    display: none;
+  }
+  .app__header .header__with-search .header__btn-next {
+    display: none;
+  }
+  .app__header .header__nav .header__nav-list {
+    padding-left: 20px;
+  }
+  .app__header .header__nav .header__nav-list .header__nav-item.hide-on-mobile {
+    display: none;
+  }
+
+  .app__header-container .header-actions {
+    display: none;
+  }
+
+  .content .content__navbar {
+    margin-top: 45px;
+  }
+  .content .content__navbar .content__navbar-list .content__navbar-item.hide-on-mobile {
+    display: none;
+  }
+  .content .content__container .header .download-song.hide-on-mobile, .content .content__container .header .right .hide-on-mobile.play-all {
+    display: none;
+  }
+  .content .content__container .song__animate-list {
+    display: none;
+  }
+  .content .content__container .container__playlist .playlist .playlist__song-item .song-item__time {
+    display: none;
+  }
+
+  .player .player-controls-left .media .media__left .thumb-img img {
+    width: 40px;
+    height: 40px;
+  }
+  .player .player-controls-left .media .media__right {
+    display: none;
+  }
+  .player .player-controls-right {
+    display: none;
+  }
+}
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+  .app__sidebar {
+    width: 70px;
+    text-align: center;
+    background: #572f90;
+  }
+  .app__sidebar .sidebar__logo-img {
+    display: none;
+  }
+  .app__sidebar .sidebar__logo-tablet {
+    display: block;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item {
+    margin-bottom: 10px;
+    padding: 20px 0;
+    justify-content: center;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link {
+    margin: 0;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link span {
+    display: none;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link i {
+    margin: 0;
+    font-size: 23px;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link .nav__labl {
+    display: none;
+  }
+  .app__sidebar .sidebar__nav .sidebar__nav-list .sidebar__nav-item.active {
+    background: #68449b;
+  }
+  .app__sidebar .sidebar__nav::after {
+    width: 100%;
+  }
+  .app__sidebar .sidebar__subnav .sidebar__nav-list .sidebar__nav-item {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  .app__sidebar .sidebar__subnav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link {
+    margin: 0;
+  }
+  .app__sidebar .sidebar__subnav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link i {
+    margin: 0;
+    font-size: 23px;
+  }
+  .app__sidebar .sidebar__subnav .sidebar__nav-list .sidebar__nav-item .sidebar__item-link span {
+    display: none;
+  }
+  .app__sidebar .sidebar__banner {
+    display: none;
+  }
+  .app__sidebar .sidebar__subnav-libary {
+    margin-top: 20px;
+  }
+  .app__sidebar .sidebar__subnav-libary .subnav__title {
+    display: none;
+  }
+  .app__sidebar .sidebar__subnav-libary .subnav__menu .subnav__menu-list .subnav__menu-item {
+    justify-content: center;
+  }
+  .app__sidebar .sidebar__subnav-libary .subnav__menu .subnav__menu-list .subnav__menu-item a {
+    margin: 0;
+  }
+  .app__sidebar .sidebar__subnav-libary .subnav__menu .subnav__menu-list .subnav__menu-item a svg {
+    margin: 0;
+  }
+  .app__sidebar .sidebar__subnav-libary .subnav__menu .subnav__menu-list .subnav__menu-item a span {
+    display: none;
+  }
+  .app__sidebar .sidebar__my-playlist {
+    display: none;
+  }
+  .app__sidebar .sidebar__add-playlist {
+    background: #572f90;
+    width: 70px;
+    justify-content: center;
+  }
+  .app__sidebar .sidebar__add-playlist .create-song {
+    display: none;
+  }
+  .app__sidebar .sidebar__add-playlist .btn-expanded {
+    display: flex;
+  }
+
+  .player .media__right {
+    display: none;
+  }
+  .player .player-controls__video {
+    display: none;
+  }
+  .player .player-controls__player-bar .player__controls-btn i {
+    margin: 0 10px;
+  }
+  .player .player-controls-right .player-controls__mic {
+    display: none;
+  }
+  .player .player-controls-right .player-controls__list-icon {
+    margin-left: 20px;
+    padding: 4px 3.5px;
+    font-size: 13px;
+  }
+
+  .app__container {
+    padding: 0 10px;
+  }
+  .app__container .app__header {
+    width: calc(100% - 70px);
+  }
+  .app__container .app__header-container .header-actions .buy-vip-btn, .app__container .app__header-container .header-actions .import-code-btn {
+    margin-right: 10px;
+  }
+  .app__container .app__header-container .header-actions .import-code-btn {
+    display: none;
+  }
+  .app__container .content .content__navbar .content__navbar-list {
+    margin: 0;
+  }
+  .app__container .content .content__navbar .content__navbar-list .content__navbar-item {
+    min-width: 100px;
+  }
+  .app__container .content .content__navbar .content__navbar-list .content__navbar-item.hide-on-tablet {
+    display: none;
+  }
+  .app__container .content .tab-overview {
+    padding-left: 35px;
+    padding-right: 0;
+  }
+  .app__container .content .tab-overview .container__playlist .song-item__time span {
+    display: none;
   }
 }
 

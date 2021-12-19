@@ -26,6 +26,7 @@
         <div class="app__sidebar">
             <div class="sidebar__logo">
                 <img src="./assets/img/logos/main-logo.svg" class="sidebar__logo-img">
+                <img src="./assets/img/logos/small-logo.svg" class="sidebar__logo-tablet">
             </div>
             <div class="sidebar__nav">
                 <ul class="sidebar__nav-list">
@@ -207,10 +208,13 @@
                 </div>
             </div>
             <div class="sidebar__add-playlist">
-                <a href="#">
-                    <i class="bi bi-plus-lg"></i>
+                <a href="#" class="create-song">
+                    <i class="bi bi-plus-lg ic-create-song"></i>
                     <span>Tạo playlist mới</span>
                 </a>
+                <div class="btn-expanded">
+                    <i class="bi bi-chevron-right"></i>
+                </div>
             </div>
         </div>
 
@@ -262,7 +266,7 @@
                                 <use fill="#FFF" fill-opacity="0.05" xlink:href="#2eiwxjmc7m"></use></g>
                             </svg>
                         </li>
-                        <li class="header__nav-item">
+                        <li class="header__nav-item hide-on-mobile">
                             <i class="bi bi-upload"></i>
                         </li>
                         <li class="header__nav-item">
@@ -296,10 +300,10 @@
                         <li class="content__navbar-item active"><span>TỔNG QUAN</span></li>
                         <li class="content__navbar-item "><span>BÀI HÁT</span></li>
                         <li class="content__navbar-item "><span>PLAYLIST</span></li>
-                        <li class="content__navbar-item "><span>ALBUM</span></li>
+                        <li class="content__navbar-item hide-on-mobile"><span>ALBUM</span></li>
                         <li class="content__navbar-item"><span>MV</span></li>
-                        <li class="content__navbar-item"><span>NGHỆ SĨ</span></li>
-                        <li class="content__navbar-item "><span>TẢI LÊN</span></li>
+                        <li class="content__navbar-item hide-on-mobile"><span>NGHỆ SĨ</span></li>
+                        <li class="content__navbar-item hide-on-tablet hide-on-mobile"><span>TẢI LÊN</span></li>
                     </ul>
                 </div> 
 
@@ -310,9 +314,11 @@
                             <div class="header">
                                 <h3 class="left">Bài Hát <i class="bi bi-chevron-right"></i></h3>
                                 <div class="right">
-                                    <div class="download-song">
-                                        <i class="bi bi-upload"></i>
-                                        <span>TẢI LÊN</span>
+                                    <div class="download-song hide-on-mobile">
+                                      
+                                            <i class="bi bi-upload"></i>
+                                            <span>TẢI LÊN</span>
+                                     
                                     </div>
                                     <div class="play-all">
                                         <i class="bi bi-play-fill"></i>

@@ -1,6 +1,7 @@
 .app__container {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   height: calc(100vh - 88px);
   padding: 0 45px;
 
@@ -199,7 +200,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 700px;
   margin: 0 auto;
   margin-top: 60px;
 
@@ -469,12 +469,25 @@
               font-size: 14px;
               font-weight: 500;
               line-height: 22px;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              text-overflow: ellipsis;
+              max-width: 200px;
             }
 
             span {
               color: $white-color;
               opacity: 0.55;
               font-size: 12px;
+              line-height: 16px;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              text-overflow: ellipsis;
+              max-width: 200px;
             }
           }
         }
@@ -609,7 +622,7 @@
         align-items: center;
         justify-content: center;
         display: none;
-      
+
         .icon-tone__img {
           width: 25px;
           height: 18px;

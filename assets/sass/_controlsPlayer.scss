@@ -140,15 +140,25 @@
       &__content {
         padding: 0 20px 0 10px;
         font-size: 12px;
+        max-width: 200px;
+        
         h4 {
           color: $white-gray;
           margin: 0;
           line-height: 25px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
         }
 
         span {
           color: $white-gray;
           opacity: 0.7;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
         }
       }
 
