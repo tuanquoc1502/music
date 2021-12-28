@@ -434,48 +434,48 @@ $(".app__container").onscroll = () => {
 
 
 // Slide play-list
-const wapperBox = $('.wapper__box')
-const wappepPlayList = $('.wapper__playlist')
-const slideItems = $$('.playlist__item')
-const btnLeft = $('.btnLeft')
-const btnRight = $('.btnRight')
+// const wapperBox = $('.wapper__box')
+// const wappepPlayList = $('.wapper__playlist')
+// const slideItems = $$('.playlist__item')
+// const btnLeft = $('.btnLeft')
+// const btnRight = $('.btnRight')
 
-document.addEventListener('DOMContentLoaded', () => {
-    slidePlayList(5)
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     slidePlayList(5)
+// })
 
-function slidePlayList(amountSlide) {
-    const widthItem = wapperBox.offsetWidth / amountSlide;
+// function slidePlayList(amountSlide) {
+//     const widthItem = wapperBox.offsetWidth / amountSlide;
 
-    let widthAllBox = widthItem * slideItems.length;
+//     let widthAllBox = widthItem * slideItems.length;
 
-    wappepPlayList.style.width = `${widthAllBox}px`
+//     wappepPlayList.style.width = `${widthAllBox}px`
 
-    slideItems.forEach((slideItem) => {
-        slideItem.style.width = `${widthItem}px`
-    })
+//     slideItems.forEach((slideItem) => {
+//         slideItem.style.width = `${widthItem}px`
+//     })
 
-    count=0;
-    let spacing = widthAllBox - widthItem * amountSlide;
+//     count=0;
+//     let spacing = widthAllBox - widthItem * amountSlide;
     
-    btnRight.addEventListener('click', () => {
-        count += widthItem;
-        console.log(widthItem)
-        console.log(spacing)
-        if (count > spacing) {
-            count = 0;
-        }
-        wappepPlayList.style.transform = `translateX(${-count}px)`;
-    })
+//     btnRight.addEventListener('click', () => {
+//         count += widthItem;
+//         console.log(widthItem)
+//         console.log(spacing)
+//         if (count > spacing) {
+//             count = 0;
+//         }
+//         wappepPlayList.style.transform = `translateX(${-count}px)`;
+//     })
     
-    btnLeft.addEventListener('click', () => {
-        count -= widthItem;
-        if (count < 0) {
-            count = spacing;
-        }
-        wappepPlayList.style.transform = `translateX(${-count}px)`;
-    })
-}
+//     btnLeft.addEventListener('click', () => {
+//         count -= widthItem;
+//         if (count < 0) {
+//             count = spacing;
+//         }
+//         wappepPlayList.style.transform = `translateX(${-count}px)`;
+//     })
+// }
 
 
 
