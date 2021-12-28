@@ -129,6 +129,7 @@ const app = {
             }
         };
 
+        // Play Song
         audio.onplay = () => {
             _this.isPlaying = true;
             playBtn.classList.add("active");
@@ -137,6 +138,7 @@ const app = {
             cdThumbAnimate.play();
         };
 
+        // Pause Song
         audio.onpause = () => {
             _this.isPlaying = false;
             playBtn.classList.remove("active");
@@ -177,6 +179,7 @@ const app = {
             replaceSong.classList.toggle("active", _this.isReplace);
         };
 
+        // Next Song
         nextBtn.onclick = () => {
             if (_this.isRandom) {
                 _this.playRandomSong();
@@ -188,6 +191,7 @@ const app = {
             audio.play();
         };
 
+        // Random Song
         prevBtn.onclick = () => {
             if (_this.isRandom) {
                 _this.playRandomSong();
@@ -199,6 +203,7 @@ const app = {
             audio.play();
         };
 
+        // Repeat Song
         audio.onended = function () {
             if (_this.isReplace) {
                 audio.play();
@@ -207,7 +212,7 @@ const app = {
             }
         };
 
-        //tab1
+        //Handle Tab1
         playlist.onclick = (e) => {
             //Tab1
             const songNode = e.target.closest(".playlist__song-item:not(.active)");
@@ -235,7 +240,7 @@ const app = {
             }
         };
 
-        //tab2
+        // Handle Tab2
         $(".container__song-list").onclick = (e) => {
             const songNode = e.target.closest(".container__song-item:not(.active)");
             const iconOptions = e.target.closest(".options-icon");
@@ -331,8 +336,10 @@ const app = {
         // Định nghĩa properties cho Object
         this.defineProperties();
 
+        // Render Song Tab1
         this.render();
 
+         // Render Song Tab2 ( TabPlayList)
         this.renderPlayList();
 
         //Load bài đầu tiên
@@ -344,6 +351,8 @@ const app = {
 };
 
 app.start();
+
+
 
 // handling when clicking on nav bar
 const navItems = $$(".content__navbar-item");
@@ -361,7 +370,9 @@ navItems.forEach((navItem, index) => {
     };
 });
 
-// Like song
+
+
+// Handling the heart symbol in the song
 const heartItems = $$(".favorite");
 heartItems.forEach((heartItem) => {
     heartItem.onclick = () => {
@@ -379,6 +390,8 @@ heartItemsTab2.forEach((heartItem) => {
 $('.media__right-heart').onclick = () => {
     $('.media__right-heart').classList.toggle('active')
 }
+
+
 
 //Slide show
 let index = 2;
@@ -406,6 +419,8 @@ function slideShow() {
 
 slideShow();
 
+
+
 // handle scroll header
 $(".app__container").onscroll = () => {
     let currentValue = $(".app__container").scrollTop;
@@ -415,6 +430,54 @@ $(".app__container").onscroll = () => {
         $(".app__header").classList.remove("bg-header");
     }
 };
+
+
+
+// Slide play-list
+const wapperBox = $('.wapper__box')
+const wappepPlayList = $('.wapper__playlist')
+const slideItems = $$('.playlist__item')
+const btnLeft = $('.btnLeft')
+const btnRight = $('.btnRight')
+
+document.addEventListener('DOMContentLoaded', () => {
+    slidePlayList(5)
+})
+
+function slidePlayList(amountSlide) {
+    const widthItem = wapperBox.offsetWidth / amountSlide;
+
+    let widthAllBox = widthItem * slideItems.length;
+
+    wappepPlayList.style.width = `${widthAllBox}px`
+
+    slideItems.forEach((slideItem) => {
+        slideItem.style.width = `${widthItem}px`
+    })
+
+    count=0;
+    let spacing = widthAllBox - widthItem * amountSlide;
+    
+    btnRight.addEventListener('click', () => {
+        count += widthItem;
+        console.log(widthItem)
+        console.log(spacing)
+        if (count > spacing) {
+            count = 0;
+        }
+        wappepPlayList.style.transform = `translateX(${-count}px)`;
+    })
+    
+    btnLeft.addEventListener('click', () => {
+        count -= widthItem;
+        if (count < 0) {
+            count = spacing;
+        }
+        wappepPlayList.style.transform = `translateX(${-count}px)`;
+    })
+}
+
+
 
 // Toast
 function toast({ title = "", message = "", type = "info", duration = "" }) {
