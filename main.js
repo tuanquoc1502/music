@@ -339,7 +339,7 @@ const app = {
         // Render Song Tab1
         this.render();
 
-         // Render Song Tab2 ( TabPlayList)
+        // Render Song Tab2 ( TabPlayList)
         this.renderPlayList();
 
         //Load bài đầu tiên
@@ -457,7 +457,7 @@ $(".app__container").onscroll = () => {
 
 //     count=0;
 //     let spacing = widthAllBox - widthItem * amountSlide;
-    
+
 //     btnRight.addEventListener('click', () => {
 //         count += widthItem;
 //         console.log(widthItem)
@@ -467,7 +467,7 @@ $(".app__container").onscroll = () => {
 //         }
 //         wappepPlayList.style.transform = `translateX(${-count}px)`;
 //     })
-    
+
 //     btnLeft.addEventListener('click', () => {
 //         count -= widthItem;
 //         if (count < 0) {
@@ -514,6 +514,7 @@ function toast({ title = "", message = "", type = "info", duration = "" }) {
                     <p>${message}</p>
                 </div>
                 <div class="toast__close">
+                
                     <i class="fas fa-times"></i>
                 </div>
         `;
@@ -526,7 +527,7 @@ const itemsActive = $(".sidebar__nav-item.active");
 
 const toastDefault = () => {
     toast({
-        title: "Thông báo",
+        title: "Thông báo ",
         message: "Chức năng hiện đang được cập nhật, bạn vui lòng thông cảm!",
         type: "success",
         duration: 2.1,
