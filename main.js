@@ -1,8 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const listSong1 = JSON.parse(localStorage.getItem("listSong"));
-
 const playlist = $(".playlist");
 const firstSongImage = $(".thumb-img");
 const firstSongInfo = $(".media__content");
@@ -17,6 +15,7 @@ const prevBtn = $(".icon-prev");
 const randomBtn = $(".icon-random");
 const replaceSong = $(".icon-replace");
 const volumeBtn = $(".player-controls__volume");
+ 
 
 const app = {
     currentIndex: 0,
@@ -24,9 +23,11 @@ const app = {
     isRandom: false,
     isReplace: false,
     isVolume: false,
+    songPlaylists: JSON.parse(localStorage.getItem("listSong") || '[]'),
+
 
     render() {
-        const htmls = listSong1.map(
+        const htmls = this.songPlaylists.map(
             (song, index) =>
                 `
                 <div class="playlist__song-item ${this.currentIndex === index ? "active" : ""
@@ -69,7 +70,7 @@ const app = {
     },
 
     renderPlayList() {
-        const htmlsTab2 = listSong1.map(
+        const htmlsTab2 = this.songPlaylists.map(
             (song, index) =>
                 `
             <li class="container__song-item ${this.currentIndex === index ? "active" : ""
@@ -283,7 +284,7 @@ const app = {
     defineProperties() {
         Object.defineProperty(this, "currentSong", {
             get() {
-                return listSong1[this.currentIndex];
+                return this.songPlaylists[this.currentIndex];
             },
         });
     },
@@ -299,7 +300,7 @@ const app = {
     playRandomSong() {
         let newIndex;
         do {
-            newIndex = Math.floor(Math.random() * listSong1.length);
+            newIndex = Math.floor(Math.random() * this.songPlaylists.length);
         } while (newIndex === this.currentIndex);
         this.currentIndex = newIndex;
         this.loadCurrentSong();
@@ -316,7 +317,7 @@ const app = {
 
     nextSong() {
         this.currentIndex++;
-        if (this.currentIndex >= listSong1.length) {
+        if (this.currentIndex >= this.songPlaylists.length) {
             this.currentIndex = 0;
         }
         this.loadCurrentSong();
@@ -326,7 +327,7 @@ const app = {
     prevSong() {
         this.currentIndex--;
         if (this.currentIndex < 0) {
-            this.currentIndex = listSong1.length - 1;
+            this.currentIndex = this.songPlaylists.length - 1;
         }
         this.loadCurrentSong();
         this.viewTop();
