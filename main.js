@@ -15,7 +15,6 @@ const prevBtn = $(".icon-prev");
 const randomBtn = $(".icon-random");
 const replaceSong = $(".icon-replace");
 const volumeBtn = $(".player-controls__volume");
- 
 
 const app = {
     currentIndex: 0,
@@ -23,8 +22,8 @@ const app = {
     isRandom: false,
     isReplace: false,
     isVolume: false,
-    songPlaylists: JSON.parse(localStorage.getItem("listSong") || '[]'),
 
+    songPlaylists: JSON.parse(localStorage.getItem("listSong") || '[]'),
 
     render() {
         const htmls = this.songPlaylists.map(
@@ -334,18 +333,18 @@ const app = {
     },
 
     start() {
-        // Định nghĩa properties cho Object
-        this.defineProperties();
-
         // Render Song Tab1
         this.render();
-
+        
         // Render Song Tab2 ( TabPlayList)
         this.renderPlayList();
-
+        
+        // Định nghĩa properties cho Object
+        this.defineProperties();
+        
         //Load bài đầu tiên
         this.loadCurrentSong();
-
+        
         // Xử lý các DOM EVENT
         this.hanldleEvents();
     },
@@ -393,7 +392,6 @@ $('.media__right-heart').onclick = () => {
 }
 
 
-
 //Slide show
 let index = 2;
 function slideShow() {
@@ -421,7 +419,6 @@ function slideShow() {
 slideShow();
 
 
-
 // handle scroll header
 $(".app__container").onscroll = () => {
     let currentValue = $(".app__container").scrollTop;
@@ -431,54 +428,6 @@ $(".app__container").onscroll = () => {
         $(".app__header").classList.remove("bg-header");
     }
 };
-
-
-
-// Slide play-list
-// const wapperBox = $('.wapper__box')
-// const wappepPlayList = $('.wapper__playlist')
-// const slideItems = $$('.playlist__item')
-// const btnLeft = $('.btnLeft')
-// const btnRight = $('.btnRight')
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     slidePlayList(5)
-// })
-
-// function slidePlayList(amountSlide) {
-//     const widthItem = wapperBox.offsetWidth / amountSlide;
-
-//     let widthAllBox = widthItem * slideItems.length;
-
-//     wappepPlayList.style.width = `${widthAllBox}px`
-
-//     slideItems.forEach((slideItem) => {
-//         slideItem.style.width = `${widthItem}px`
-//     })
-
-//     count=0;
-//     let spacing = widthAllBox - widthItem * amountSlide;
-
-//     btnRight.addEventListener('click', () => {
-//         count += widthItem;
-//         console.log(widthItem)
-//         console.log(spacing)
-//         if (count > spacing) {
-//             count = 0;
-//         }
-//         wappepPlayList.style.transform = `translateX(${-count}px)`;
-//     })
-
-//     btnLeft.addEventListener('click', () => {
-//         count -= widthItem;
-//         if (count < 0) {
-//             count = spacing;
-//         }
-//         wappepPlayList.style.transform = `translateX(${-count}px)`;
-//     })
-// }
-
-
 
 // Toast
 function toast({ title = "", message = "", type = "info", duration = "" }) {
